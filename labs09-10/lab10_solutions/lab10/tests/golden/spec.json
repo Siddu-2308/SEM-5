@@ -1,0 +1,73 @@
+{
+  "args": [
+    "--proc=forwarding"
+  ],
+  "compare": [
+    "stats"
+  ],
+  "lab": "lab10",
+  "runs": [
+    {
+      "config": "dcache-writeback.ini",
+      "image": "1-even",
+      "name": "dcache-writeback-1-even"
+    },
+    {
+      "config": "dcache-writeback.ini",
+      "image": "4-histogram",
+      "name": "dcache-writeback-4-histogram"
+    },
+    {
+      "config": "dcache-writeback.ini",
+      "image": "7-matmul",
+      "name": "dcache-writeback-7-matmul"
+    },
+    {
+      "config": "dcache-writethrough.ini",
+      "image": "1-even",
+      "name": "dcache-writethrough-1-even"
+    },
+    {
+      "config": "dcache-writethrough.ini",
+      "image": "4-histogram",
+      "name": "dcache-writethrough-4-histogram"
+    },
+    {
+      "config": "dcache-writethrough.ini",
+      "image": "7-matmul",
+      "name": "dcache-writethrough-7-matmul"
+    },
+    {
+      "config": "two-level.ini",
+      "image": "1-even",
+      "name": "two-level-1-even"
+    },
+    {
+      "config": "two-level.ini",
+      "image": "4-histogram",
+      "name": "two-level-4-histogram"
+    },
+    {
+      "config": "two-level.ini",
+      "image": "7-matmul",
+      "name": "two-level-7-matmul"
+    }
+  ],
+  "stat_keys": [
+    "instructions",
+    "exit_status",
+    "cycles",
+    "memory_stall_cycles",
+    "I1.accesses",
+    "I1.misses",
+    "I1.evictions",
+    "L1.accesses",
+    "L1.read_misses",
+    "L1.write_hits",
+    "L1.write_misses",
+    "L1.evictions",
+    "L1.writebacks",
+    "RAM.reads",
+    "RAM.writes"
+  ]
+}

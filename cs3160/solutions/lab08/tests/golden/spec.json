@@ -1,0 +1,50 @@
+{
+  "args": [
+    "--proc=forwarding"
+  ],
+  "compare": [
+    "trace",
+    "stats"
+  ],
+  "lab": "lab08",
+  "runs": [
+    {
+      "config": null,
+      "image": "1-even",
+      "name": "1-even"
+    },
+    {
+      "config": null,
+      "image": "2-prime",
+      "name": "2-prime"
+    },
+    {
+      "config": null,
+      "image": "4-histogram",
+      "name": "4-histogram"
+    },
+    {
+      "config": null,
+      "image": "9-hazards",
+      "name": "9-hazards"
+    },
+    {
+      "config": null,
+      "image": "10-branch-offset4",
+      "name": "10-branch-offset4"
+    }
+  ],
+  "stat_keys": [
+    "instructions",
+    "cycles",
+    "loads",
+    "stores",
+    "branches",
+    "taken_branches",
+    "jumps",
+    "pc_redirects",
+    "flushed_instructions",
+    "stall_cycles",
+    "exit_status"
+  ]
+}

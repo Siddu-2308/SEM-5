@@ -1,0 +1,4 @@
+// VS Code offers to install these when the lab folder is opened.
+{
+  "recommendations": ["llvm-vs-code-extensions.vscode-clangd"]
+}

@@ -1,0 +1,57 @@
+# CS3160 Lab 3 -- Part 1: the instructor's key
+#
+# Recorded by running reference/build/sim -- the same binary students get as
+# /opt/cs3160/reference-sim -- over the five images in tests/images/, under the
+# three configurations sections 1.1 to 1.3 build up. slow.ini beside this file
+# is the one they end with: the [RAM] section alone is what 1.2 measures, and
+# 1.3 is that file with the [I1_Cache] block added.
+#
+# Nothing grades this file. Lab 3's marks are build/unit/stdout over part 2
+# (tools/marks/lab03.ini), and part 1 exists so the numbers can be compared
+# against the student's own simulator in a later week. So these are here to be
+# read out at the board, not matched character for character.
+#
+# Regenerate: see solutions/README.md. Do not edit solutions/lab03/answers.txt
+# -- it is overwritten from this file.
+
+## 1.1  Ideal memory:  reference-sim --proc=single tests/images/<program>.r5ob
+
+1-even            instructions: 110        cycles: 110        cpi: 1.0000
+2-prime           instructions: 74         cycles: 74         cpi: 1.0000
+4-histogram       instructions: 268        cycles: 268        cpi: 1.0000
+8-arith-edges     instructions: 371        cycles: 371        cpi: 1.0000
+10-branch-offset4 instructions: 67         cycles: 67         cpi: 1.0000
+
+## 1.2  RAM latency 100, no cache:  --config=slow.ini
+
+1-even            instructions: 110        cycles: 11800      cpi: 107.2727
+2-prime           instructions: 74         cycles: 7700       cpi: 104.0541
+4-histogram       instructions: 268        cycles: 33000      cpi: 123.1343
+8-arith-edges     instructions: 371        cycles: 47100      cpi: 126.9542
+10-branch-offset4 instructions: 67         cycles: 6800       cpi: 101.4925
+
+## 1.3  With a 1 KiB instruction cache in front of it
+
+1-even            cycles: 1720       i1_hit_rate: 93.64%
+2-prime           cycles: 1148       i1_hit_rate: 90.54%
+4-histogram       cycles: 7436       i1_hit_rate: 97.39%
+8-arith-edges     cycles: 13342      i1_hit_rate: 92.99%
+10-branch-offset4 cycles: 834        i1_hit_rate: 91.04%
+
+## 1.3  Two questions, one sentence each.
+
+# Why does a 1 KiB cache help a program whose instructions do not fit in 1 KiB?
+Q1: Because only the part being executed right now has to fit. A loop body is
+#   fetched from RAM once and then hit on every later iteration, and one 64-byte
+#   block holds sixteen instructions, so even straight-line code pays RAM once
+#   per sixteen fetches. A cache holds the working set, not the program.
+
+# Which program benefits least, and what is different about it?
+Q2: 8-arith-edges -- 3.53x, against 4.44x to 8.15x for the rest. Two things set
+#   it apart. 100 of its 371 instructions touch memory, 86 of them stores, and
+#   this is an *instruction* cache, so none of that traffic is cached at all.
+#   And it is the only one that fills the cache: 16 distinct blocks for 16 sets,
+#   so its fetches start conflicting -- 26 misses with 10 evictions, where the
+#   other four touch 5 blocks each and miss 6 or 7 times. Worth saying out loud
+#   that it does not have the lowest hit rate -- 2-prime does, at 90.54% --
+#   because a hit rate is not a speedup.

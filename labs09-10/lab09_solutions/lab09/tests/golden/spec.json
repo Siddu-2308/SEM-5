@@ -1,0 +1,81 @@
+{
+  "args": [
+    "--proc=forwarding"
+  ],
+  "compare": [
+    "stats"
+  ],
+  "lab": "lab09",
+  "runs": [
+    {
+      "config": "icache-direct.ini",
+      "image": "1-even",
+      "name": "icache-direct-1-even"
+    },
+    {
+      "config": "icache-direct.ini",
+      "image": "4-histogram",
+      "name": "icache-direct-4-histogram"
+    },
+    {
+      "config": "icache-direct.ini",
+      "image": "7-matmul",
+      "name": "icache-direct-7-matmul"
+    },
+    {
+      "config": "icache-2way-lru.ini",
+      "image": "1-even",
+      "name": "icache-2way-lru-1-even"
+    },
+    {
+      "config": "icache-2way-lru.ini",
+      "image": "4-histogram",
+      "name": "icache-2way-lru-4-histogram"
+    },
+    {
+      "config": "icache-2way-lru.ini",
+      "image": "7-matmul",
+      "name": "icache-2way-lru-7-matmul"
+    },
+    {
+      "config": "icache-full-lru.ini",
+      "image": "1-even",
+      "name": "icache-full-lru-1-even"
+    },
+    {
+      "config": "icache-full-lru.ini",
+      "image": "4-histogram",
+      "name": "icache-full-lru-4-histogram"
+    },
+    {
+      "config": "icache-full-lru.ini",
+      "image": "7-matmul",
+      "name": "icache-full-lru-7-matmul"
+    },
+    {
+      "config": "icache-full-fifo.ini",
+      "image": "1-even",
+      "name": "icache-full-fifo-1-even"
+    },
+    {
+      "config": "icache-full-fifo.ini",
+      "image": "4-histogram",
+      "name": "icache-full-fifo-4-histogram"
+    },
+    {
+      "config": "icache-full-fifo.ini",
+      "image": "7-matmul",
+      "name": "icache-full-fifo-7-matmul"
+    }
+  ],
+  "stat_keys": [
+    "instructions",
+    "exit_status",
+    "cycles",
+    "memory_stall_cycles",
+    "I1.accesses",
+    "I1.hits",
+    "I1.misses",
+    "I1.evictions"
+  ]
+}

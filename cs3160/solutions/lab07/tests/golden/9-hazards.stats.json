@@ -1,0 +1,29 @@
+{
+  "branch_resolved_in": "MEM",
+  "branches": 16,
+  "cpi": 2.1124,
+  "cycles": 376,
+  "data_accesses": 22,
+  "exit_status": 0,
+  "exited": true,
+  "flushed_instructions": 60,
+  "instruction_fetches": 240,
+  "instructions": 178,
+  "jumps": 11,
+  "latency_overlap": "max",
+  "loads": 15,
+  "memory": [
+    {
+      "accesses": 262,
+      "level": "RAM",
+      "reads": 255,
+      "writes": 7
+    }
+  ],
+  "memory_stall_cycles": 0,
+  "pc_redirects": 23,
+  "processor": "pipelined",
+  "stall_cycles": 134,
+  "stores": 7,
+  "taken_branches": 12
+}

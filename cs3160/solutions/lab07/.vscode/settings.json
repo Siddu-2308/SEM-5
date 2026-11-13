@@ -1,0 +1,41 @@
+// C++ code navigation for this lab, with clangd.
+//
+// 1. Open the lab folder itself: File > Open Folder..., or `code .` from
+//    inside it. Opening a folder above it means none of this is read.
+// 2. Install the "clangd" extension (llvm-vs-code-extensions.vscode-clangd)
+//    if VS Code offers it.
+// 3. Run `make` (or `make test`) once. That writes compile_commands.json,
+//    which is how clangd learns what each file is compiled with and which
+//    files there are. Every later `make` keeps it up to date.
+//
+// Then, on any function call:
+//
+//   F12            Go to Definition -- the function's body, in whichever
+//                  .cpp it is written
+//   Shift+F12      every place it is called from
+//   Ctrl+T         find any function or struct by name
+//   Alt+Left       back to where you were
+{
+  // clangd and Microsoft's C/C++ extension both answer these questions, and
+  // they disagree. If you have Microsoft's installed, keep it -- its debugger
+  // is useful -- but its code navigation is switched off here.
+  "C_Cpp.intelliSenseEngine": "disabled",
+
+  "clangd.arguments": [
+    // Ask g++ where its C++ headers are, rather than guessing. On a machine
+    // with more than one GCC installed, clangd can guess a version whose
+    // headers are not there, and then every #include <string> shows as an
+    // error that the compiler itself would never report.
+    "--query-driver=**/g++*,**/c++*",
+    // Completion must not add #include lines on its own.
+    "--header-insertion=never"
+  ],
+
+  // Only until the first `make` has written compile_commands.json.
+  "clangd.fallbackFlags": ["-std=c++17"],
+
+  // The simulator is C++ throughout, headers included.
+  "files.associations": {
+    "*.h": "cpp"
+  }
+}

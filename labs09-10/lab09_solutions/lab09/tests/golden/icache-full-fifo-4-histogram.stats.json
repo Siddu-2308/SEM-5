@@ -1,0 +1,44 @@
+{
+  "branch_resolved_in": "ID",
+  "branches": 23,
+  "cpi": 33.2761,
+  "cycles": 8918,
+  "data_accesses": 62,
+  "exit_status": 0,
+  "exited": true,
+  "flushed_instructions": 26,
+  "instruction_fetches": 296,
+  "instructions": 268,
+  "jumps": 24,
+  "latency_overlap": "max",
+  "loads": 41,
+  "memory": [
+    {
+      "accesses": 296,
+      "evictions": 15,
+      "hit_rate": 0.9223,
+      "hits": 273,
+      "level": "I1",
+      "misses": 23,
+      "read_hits": 273,
+      "read_misses": 23,
+      "reads": 296,
+      "write_hits": 0,
+      "write_misses": 0,
+      "writebacks": 0,
+      "writes": 0
+    },
+    {
+      "accesses": 85,
+      "level": "RAM",
+      "reads": 64,
+      "writes": 21
+    }
+  ],
+  "memory_stall_cycles": 8576,
+  "pc_redirects": 27,
+  "processor": "forwarding",
+  "stall_cycles": 44,
+  "stores": 21,
+  "taken_branches": 2
+}

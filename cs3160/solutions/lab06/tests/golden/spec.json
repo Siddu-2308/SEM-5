@@ -1,0 +1,50 @@
+{
+  "args": [
+    "--proc=pipelined"
+  ],
+  "compare": [
+    "trace",
+    "stats"
+  ],
+  "lab": "lab06",
+  "runs": [
+    {
+      "config": null,
+      "image": "p1-arith",
+      "name": "p1-arith"
+    },
+    {
+      "config": null,
+      "image": "p2-spaced",
+      "name": "p2-spaced"
+    },
+    {
+      "config": null,
+      "image": "p3-memory",
+      "name": "p3-memory"
+    },
+    {
+      "config": null,
+      "image": "p4-branch",
+      "name": "p4-branch"
+    },
+    {
+      "config": null,
+      "image": "p5-jump",
+      "name": "p5-jump"
+    }
+  ],
+  "stat_keys": [
+    "instructions",
+    "cycles",
+    "loads",
+    "stores",
+    "branches",
+    "taken_branches",
+    "jumps",
+    "pc_redirects",
+    "flushed_instructions",
+    "stall_cycles",
+    "exit_status"
+  ]
+}

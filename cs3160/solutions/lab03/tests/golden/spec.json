@@ -1,0 +1,38 @@
+{
+  "args": [
+    "--norun",
+    "--dump=0x80000000:0x80000200"
+  ],
+  "compare": [
+    "stdout"
+  ],
+  "lab": "lab03",
+  "runs": [
+    {
+      "config": null,
+      "image": "1-even",
+      "name": "1-even"
+    },
+    {
+      "config": null,
+      "image": "2-prime",
+      "name": "2-prime"
+    },
+    {
+      "config": null,
+      "image": "4-histogram",
+      "name": "4-histogram"
+    },
+    {
+      "config": null,
+      "image": "8-arith-edges",
+      "name": "8-arith-edges"
+    },
+    {
+      "config": null,
+      "image": "10-branch-offset4",
+      "name": "10-branch-offset4"
+    }
+  ],
+  "stat_keys": []
+}
